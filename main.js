@@ -6,6 +6,7 @@ const chooseOptimalDistance = (t, k, ls) => {
     let arr4 = [];
     let arrArays = [];
     let fff = ls;
+    console.log(ls);
 
     if (fff.length >= k) {
         for (let i = 0; i < fff.length; i += 1) {
@@ -68,4 +69,4 @@ const chooseOptimalDistance = (t, k, ls) => {
 }
 
 console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173
-// console.log(chooseOptimalDistance(163, 3, [50])); // null
+console.log(chooseOptimalDistance(163, 3, [50])); // null
