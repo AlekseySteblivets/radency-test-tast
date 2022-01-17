@@ -5,14 +5,14 @@ function chooseOptimalDistance(t, k, ls) {
 
     combine(k, ls, 0, kNumbersArray, sums);
 
-    console.log(sums);
+    // console.log(sums);
     return learnNeedSumm(sums, t);
 }
 
 function combine(k, ls, start, kNumbersArray, sums) {
     if (k === 0) {
         sums.push(getSumOfElems(kNumbersArray));
-        console.log(kNumbersArray);
+        // console.log(kNumbersArray);
         return;
     }
 
@@ -33,16 +33,12 @@ function getSumOfElems(array) {
 
 function learnNeedSumm(sums, t) {
     let rez = null;
-    for (i = 0; i < sums.length; i += 1) {
+    let check = sums.every(el => el > t);
+    // console.log(check);
+    !check ? rez = sums.filter(cur => cur < t).sort().reverse()[0] : res = null;
+        return rez
 
     }
-    rez = sums.filter(cur => cur < t).sort().reverse()[0];
-    console.log(rez);
-    return rez
-
-
-}
-
-
+    
 console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61]));
-// console.log(chooseOptimalDistance(163, 3, [50, 56, 58, 59, 61])); // null
+console.log(chooseOptimalDistance(163, 3, [50])); // null
